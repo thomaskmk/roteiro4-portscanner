@@ -29,7 +29,32 @@ Uma falha em uma porta não interrompe as demais.
 
 **Melhorias implementadas (seção 7):** execução concorrente com `--workers`, exportação JSON/CSV
 com medição de tempo, log (`--log`), nome provável do serviço e novas tentativas em timeout
-(`--retries`). O pseudocódigo e o fluxograma estão em `docs/planejamento.md`.
+(`--retries`).
+
+**Por que uma tentativa de conexão revela a disponibilidade de uma porta.** O TCP obriga o destino
+a responder a um pedido de conexão, e a resposta depende de haver um processo em `listen()` naquela
+porta: SYN/ACK se houver, RST se não houver. O que se mede é a acessibilidade **a partir desta origem,
+neste momento**: um firewall no caminho pode descartar o pedido, responder no lugar do host ou forjar um RST.
+
+**Pseudocódigo**
+
+```
+validar portas, timeout, workers, retries        # inválido -> mensagem, exit 2
+ip <- getaddrinfo(alvo)                           # falha    -> mensagem, exit 1
+pool de N threads: para cada porta, agendar testar(ip, porta)
+    ao concluir cada tarefa: guardar resultado
+    se Ctrl+C: cancelar pendentes, marcar parcial
+ordenar por porta; exibir tabela e resumo; exportar JSON/CSV
+exit 130 se interrompido, senão 0
+
+testar(ip, porta):                                # repete só em TIMEOUT, até 1+retries vezes
+    com socket TCP s:                             # fechado ao sair, em qualquer caso
+        s.settimeout(timeout); s.connect((ip, porta))  -> ABERTA
+        ConnectionRefusedError                         -> RECUSADA
+        socket.timeout / TimeoutError                  -> TIMEOUT
+        OSError com errno local (EMFILE...)            -> ERRO-LOCAL
+        outro OSError                                  -> ERRO (+ errno)
+```
 
 ## 2. Testes iniciais e tratamento de erros (seções 3.3 e 4) — `evidencias/20261124-152701_erros/`
 

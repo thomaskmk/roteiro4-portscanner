@@ -84,7 +84,7 @@ portscanner/
   models.py   Status (enum) e estruturas de resultado
 lab/          alvo Docker com portas em estados controlados
 scripts/      experimentos (geram evidências) e ferramentas de comparação
-docs/         planejamento, relatório e roteiro da demonstração
+docs/         relatório técnico e roteiro da demonstração
 evidencias/   saídas brutas dos experimentos
 ```
 
