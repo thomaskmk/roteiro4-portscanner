@@ -1,0 +1,48 @@
+{
+  "scanner": "portscanner",
+  "version": "1.0.0",
+  "target": "172.30.0.10",
+  "ip": "172.30.0.10",
+  "family": "IPv4",
+  "ports_spec": "10000-10099",
+  "ports_requested": 100,
+  "ports_tested": 2,
+  "timeout_s": 1.0,
+  "workers": 1,
+  "retries": 0,
+  "started_at": "2026-11-24T16:49:25-03:00",
+  "finished_at": "2026-11-24T16:49:28-03:00",
+  "duration_s": 2.9366,
+  "interrupted": true,
+  "summary": {
+    "aberta": 0,
+    "recusada": 0,
+    "timeout": 2,
+    "erro": 0,
+    "erro-local": 0
+  },
+  "results": [
+    {
+      "port": 10000,
+      "status": "timeout",
+      "elapsed_ms": 1002.258,
+      "errno_name": null,
+      "detail": "sem resposta em 1s (causa indeterminada)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T16:49:26.295-03:00",
+      "service_hint": "webmin",
+      "nmap_equivalent": "filtered"
+    },
+    {
+      "port": 10001,
+      "status": "timeout",
+      "elapsed_ms": 1001.125,
+      "errno_name": null,
+      "detail": "sem resposta em 1s (causa indeterminada)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T16:49:27.296-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "filtered"
+    }
+  ]
+}

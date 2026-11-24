@@ -1,0 +1,226 @@
+## 3.3 visão geral do lab (todas as portas configuradas)
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080,9000-9004 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-164917_erros/lab_completo.json
+# início: 2026-11-24T16:49:17-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 8  |  timeout: 2s  |  workers: 8  |  retries: 0
+Início: 2026-11-24T16:49:17-03:00
+
+PORTA     ESTADO    ≈NMAP     TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  --------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp    recusada  closed         0.10      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+80/tcp    aberta    open           0.18      1  -             handshake TCP concluído                               http
+8080/tcp  aberta    open           1.57      1  -             handshake TCP concluído                               http-alt
+9000/tcp  aberta    open           0.43      1  -             handshake TCP concluído                               -
+9001/tcp  timeout   filtered    2001.70      1  -             sem resposta em 2s (causa indeterminada)              -
+9002/tcp  recusada  closed         0.29      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  -
+9003/tcp  erro      filtered       0.06      1  EHOSTUNREACH  No route to host                                      -
+9004/tcp  recusada  closed         0.03      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 3 aberta, 3 recusada, 1 timeout, 1 erro — 8/8 portas em 2.005s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-164917_erros/lab_completo.json
+# exit=0  fim: 2026-11-24T16:49:19-03:00
+
+## 4.1 porta com serviço ativo
+$ python3 -m portscanner 172.30.0.10 -p 80
+# início: 2026-11-24T16:49:19-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1  |  timeout: 1s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T16:49:19-03:00
+
+PORTA   ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE                  SERVIÇO PROVÁVEL*
+------  ------  -----  ---------  -----  -----  -----------------------  -----------------
+80/tcp  aberta  open        0.10      1  -      handshake TCP concluído  http
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 aberta — 1/1 portas em 0.000s
+# exit=0  fim: 2026-11-24T16:49:19-03:00
+
+## 4.2 porta sem serviço
+$ python3 -m portscanner 172.30.0.10 -p 22
+# início: 2026-11-24T16:49:19-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1  |  timeout: 1s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T16:49:19-03:00
+
+PORTA   ESTADO    ≈NMAP   TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+------  --------  ------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp  recusada  closed       0.08      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 recusada — 1/1 portas em 0.000s
+# exit=0  fim: 2026-11-24T16:49:19-03:00
+
+## 4.3 número de porta inválido
+$ python3 -m portscanner 172.30.0.10 -p 0
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: porta fora da faixa 1-65535: 0
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 70000
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: porta fora da faixa 1-65535: 70000
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p abc
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: porta não numérica: 'abc' em 'abc'
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+## 4.4 intervalo de portas inválido
+$ python3 -m portscanner 172.30.0.10 -p 100-20
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: intervalo invertido: '100-20' (início 100 > fim 20)
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 1-70000
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: porta fora da faixa 1-65535: 70000
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 10-
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: intervalo incompleto: '10-' (use INICIO-FIM, ex.: 20-25)
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 22,,80
+# início: 2026-11-24T16:49:19-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -p/--ports: item vazio em '22,,80' (vírgula sobrando?)
+# exit=2  fim: 2026-11-24T16:49:19-03:00
+
+## 4.5 endereço de destino inválido
+$ python3 -m portscanner naoexiste.invalid -p 80
+# início: 2026-11-24T16:49:19-03:00
+erro: não foi possível resolver 'naoexiste.invalid': Name or service not known
+# exit=1  fim: 2026-11-24T16:49:19-03:00
+
+$ python3 -m portscanner 300.1.1.1 -p 80
+# início: 2026-11-24T16:49:19-03:00
+erro: não foi possível resolver '300.1.1.1': Name or service not known
+# exit=1  fim: 2026-11-24T16:49:20-03:00
+
+## 4.6 timeout de conexão (porta 9001: DROP)
+$ python3 -m portscanner 172.30.0.10 -p 9001 -t 2
+# início: 2026-11-24T16:49:20-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1  |  timeout: 2s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T16:49:20-03:00
+
+PORTA     ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                   SERVIÇO PROVÁVEL*
+--------  -------  --------  ---------  -----  -----  ----------------------------------------  -----------------
+9001/tcp  timeout  filtered    2002.06      1  -      sem resposta em 2s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 timeout — 1/1 portas em 2.002s
+# exit=0  fim: 2026-11-24T16:49:22-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 9001 -t 1 -r 2
+# início: 2026-11-24T16:49:22-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1  |  timeout: 1s  |  workers: 1  |  retries: 2
+Início: 2026-11-24T16:49:22-03:00
+
+PORTA     ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                   SERVIÇO PROVÁVEL*
+--------  -------  --------  ---------  -----  -----  ----------------------------------------  -----------------
+9001/tcp  timeout  filtered    1002.30      3  -      sem resposta em 1s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 timeout — 1/1 portas em 3.006s
+# exit=0  fim: 2026-11-24T16:49:25-03:00
+
+## 4.7 interrupção pelo usuário (SIGINT após 3 s numa faixa com DROP)
+$ timeout --preserve-status -s INT 3 python3 -m portscanner 172.30.0.10 -p 10000-10099 -w 1 -t 1 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-164917_erros/interrompido.json
+# início: 2026-11-24T16:49:25-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 100  |  timeout: 1s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T16:49:25-03:00
+
+aguardando tentativas em andamento terminarem (até ~1s)...
+PORTA      ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                   SERVIÇO PROVÁVEL*
+---------  -------  --------  ---------  -----  -----  ----------------------------------------  -----------------
+10000/tcp  timeout  filtered    1002.26      1  -      sem resposta em 1s (causa indeterminada)  webmin
+10001/tcp  timeout  filtered    1001.12      1  -      sem resposta em 1s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 timeout — 2/100 portas em 2.937s
+INTERROMPIDO pelo usuário: resultado PARCIAL.
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-164917_erros/interrompido.json
+# exit=130  fim: 2026-11-24T16:49:28-03:00
+
+## extra: erros de comunicação
+$ python3 -m portscanner 172.30.0.10 -p 9002,9003 -t 2 --all
+# início: 2026-11-24T16:49:28-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 2  |  timeout: 2s  |  workers: 2  |  retries: 0
+Início: 2026-11-24T16:49:28-03:00
+
+PORTA     ESTADO    ≈NMAP     TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  --------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+9002/tcp  recusada  closed         0.29      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  -
+9003/tcp  erro      filtered       0.02      1  EHOSTUNREACH  No route to host                                      -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 recusada, 1 erro — 2/2 portas em 0.001s
+# exit=0  fim: 2026-11-24T16:49:28-03:00
+
+$ python3 -m portscanner 172.30.0.99 -p 80 -t 5
+# início: 2026-11-24T16:49:28-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.99 (172.30.0.99, IPv4)  |  portas: 1  |  timeout: 5s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T16:49:28-03:00
+
+PORTA   ESTADO  ≈NMAP     TEMPO(ms)  TENT.  ERRNO         DETALHE           SERVIÇO PROVÁVEL*
+------  ------  --------  ---------  -----  ------------  ----------------  -----------------
+80/tcp  erro    filtered    3073.28      1  EHOSTUNREACH  No route to host  http
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 erro — 1/1 portas em 3.075s
+# exit=0  fim: 2026-11-24T16:49:31-03:00
+
+## extra: parâmetros inválidos
+$ python3 -m portscanner 172.30.0.10 -p 80 -t 0
+# início: 2026-11-24T16:49:31-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -t/--timeout: timeout deve estar em (0, 60] segundos: '0'
+# exit=2  fim: 2026-11-24T16:49:31-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 80 -w 0
+# início: 2026-11-24T16:49:31-03:00
+usage: portscanner [-h] [-p PORTAS] [-t SEG] [-w N] [-r N] [-4 | -6] [--open |
+                   --all] [--json ARQ] [--csv ARQ] [--log ARQ] [-v]
+                   [--version]
+                   target
+portscanner: error: argument -w/--workers: workers deve estar entre 1 e 1000: 0
+# exit=2  fim: 2026-11-24T16:49:31-03:00
+
