@@ -1,0 +1,11 @@
+{
+  "_comment": "Estado esperado de cada porta do alvo 172.30.0.10, segundo a CONFIGURAÇÃO do lab (não segundo o resultado).",
+  "22":   "sem serviço → recusada/closed",
+  "80":   "HTTP ativo → aberta/open",
+  "8080": "HTTP ativo → aberta/open",
+  "9000": "eco TCP alternável (A/B/C) → aberta/open quando ligado",
+  "9001": "serviço ativo atrás de DROP → timeout/filtered",
+  "9002": "sem serviço, REJECT icmp-port-unreachable → recusa via ICMP",
+  "9003": "sem serviço, REJECT icmp-host-unreachable → erro (host inalcançável)",
+  "9004": "serviço ativo atrás de REJECT tcp-reset → recusada (RST forjado)"
+}

@@ -1,0 +1,28 @@
+# Laboratório do Roteiro 4: um único alvo com portas em estados controlados.
+# Subir:   docker compose -f lab/docker-compose.yml up -d --build
+# Alvo:    172.30.0.10  (acessível a partir do host Kali via bridge do Docker)
+# Se a sub-rede 172.30.0.0/24 conflitar com outra rede sua, altere aqui e em scripts/_common.sh.
+name: portscan-lab
+
+services:
+  target:
+    build: ./target
+    image: portscan-lab-target
+    container_name: portscan-target
+    hostname: target
+    cap_add:
+      - NET_ADMIN          # necessário para iptables e tc (netem) dentro do container
+    environment:
+      IPTABLES: iptables   # troque por iptables-legacy se o backend nft não funcionar
+    networks:
+      lab:
+        ipv4_address: 172.30.0.10
+    restart: "no"
+
+networks:
+  lab:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1
