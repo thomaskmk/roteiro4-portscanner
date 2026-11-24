@@ -32,7 +32,7 @@ run "$LOG" "${SCAN[@]}" "$TARGET" -p 9001 -t 2
 run "$LOG" "${SCAN[@]}" "$TARGET" -p 9001 -t 1 -r 2
 
 echo "## 4.7 interrupção pelo usuário (SIGINT após 3 s numa faixa com DROP)" | tee -a "$LOG"
-run "$LOG" timeout -s INT 3 "${SCAN[@]}" "$TARGET" -p 10000-10099 -w 1 -t 1 --json "$OUT/interrompido.json"
+run "$LOG" timeout --preserve-status -s INT 3 "${SCAN[@]}" "$TARGET" -p 10000-10099 -w 1 -t 1 --json "$OUT/interrompido.json"
 
 echo "## extra: erros de comunicação" | tee -a "$LOG"
 run "$LOG" "${SCAN[@]}" "$TARGET" -p 9002,9003 -t 2 --all
