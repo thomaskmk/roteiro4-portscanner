@@ -1,0 +1,26 @@
+### snapshot 2026-11-24T15:27:26-03:00
+## host: Linux 7.2.15+kali-arm64 aarch64 | Python 3.14.8 | Nmap version 7.991 ( https://nmap.org )
+## alvo: serviços (svc.sh status)
+SERVIÇO   PORTA  ESTADO    
+http80     80     rodando/escuta
+http8080   8080   rodando/escuta
+echo9000   9000   parado/sem-escuta
+echo9001   9001   rodando/escuta
+echo9004   9004   rodando/escuta
+## alvo: portas em escuta (ss -ltnp)
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                         
+LISTEN 0      5            0.0.0.0:8080       0.0.0.0:*    users:(("python3",pid=34,fd=3))
+LISTEN 0      5            0.0.0.0:9001       0.0.0.0:*    users:(("socat",pid=60,fd=5))  
+LISTEN 0      5            0.0.0.0:9004       0.0.0.0:*    users:(("socat",pid=71,fd=5))  
+LISTEN 0      4096      127.0.0.11:33507      0.0.0.0:*                                   
+LISTEN 0      5            0.0.0.0:80         0.0.0.0:*    users:(("python3",pid=19,fd=3))
+## alvo: firewall (iptables -S INPUT)
+-P INPUT ACCEPT
+-A INPUT -p tcp -m tcp --dport 9001 -j DROP
+-A INPUT -p tcp -m tcp --dport 9002 -j REJECT --reject-with icmp-port-unreachable
+-A INPUT -p tcp -m tcp --dport 9003 -j REJECT --reject-with icmp-host-unreachable
+-A INPUT -p tcp -m tcp --dport 9004 -j REJECT --reject-with tcp-reset
+-A INPUT -p tcp -m tcp --dport 10000:10099 -j DROP
+## alvo: qdisc (latência)
+qdisc noqueue 0: root refcnt 2 
+

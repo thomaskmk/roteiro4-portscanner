@@ -1,0 +1,4 @@
+# Nmap 7.991 scan initiated Tue Nov 24 15:27:52 2026 as: /usr/lib/nmap/nmap --privileged -sT -Pn --reason --initial-rtt-timeout 100ms --max-rtt-timeout 100ms --max-retries 0 -p 22,80,8080 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/nmap_rtt100ms 172.30.0.10
+Host: 172.30.0.10 ()	Status: Up
+Host: 172.30.0.10 ()	Ports: 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 8080/filtered/tcp//http-proxy///
+# Nmap done at Tue Nov 24 15:27:54 2026 -- 1 IP address (1 host up) scanned in 2.63 seconds

@@ -1,0 +1,4 @@
+# Nmap 7.991 scan initiated Tue Nov 24 15:27:19 2026 as: /usr/lib/nmap/nmap --privileged -sT -Pn --reason -p 22,80,8080,9000-9004 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152717_nmap/nmap 172.30.0.10
+Host: 172.30.0.10 ()	Status: Up
+Host: 172.30.0.10 ()	Ports: 22/closed/tcp//ssh///, 80/open/tcp//http///, 8080/open/tcp//http-proxy///, 9000/open/tcp//cslistener///, 9001/filtered/tcp//tor-orport///, 9002/closed/tcp//dynamid///, 9003/filtered/tcp/////, 9004/closed/tcp/////
+# Nmap done at Tue Nov 24 15:27:23 2026 -- 1 IP address (1 host up) scanned in 3.73 seconds

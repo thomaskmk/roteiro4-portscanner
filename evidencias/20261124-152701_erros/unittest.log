@@ -1,0 +1,37 @@
+$ python3 -m unittest discover -s tests -t . -v
+# início: 2026-11-24T15:27:01-03:00
+test_export_to_invalid_path (tests.test_cli.CliTest.test_export_to_invalid_path) ... ok
+test_invalid_port (tests.test_cli.CliTest.test_invalid_port) ... ok
+test_invalid_range (tests.test_cli.CliTest.test_invalid_range) ... ok
+test_invalid_target (tests.test_cli.CliTest.test_invalid_target) ... ok
+test_invalid_timeout (tests.test_cli.CliTest.test_invalid_timeout) ... ok
+test_keyboard_interrupt_returns_partial (tests.test_cli.CliTest.test_keyboard_interrupt_returns_partial) ... ok
+test_scan_and_export (tests.test_cli.CliTest.test_scan_and_export) ... ok
+test_invalid (tests.test_ports.ParsePortsTest.test_invalid) ... ok
+test_limits (tests.test_ports.ParsePortsTest.test_limits) ... ok
+test_list_mixed_dedupe_sorted (tests.test_ports.ParsePortsTest.test_list_mixed_dedupe_sorted) ... ok
+test_range (tests.test_ports.ParsePortsTest.test_range) ... ok
+test_single (tests.test_ports.ParsePortsTest.test_single) ... ok
+test_spaces (tests.test_ports.ParsePortsTest.test_spaces) ... ok
+test_spec_roundtrip (tests.test_ports.ParsePortsTest.test_spec_roundtrip) ... ok
+test_host_unreachable (tests.test_probe.ClassificationTest.test_host_unreachable) ... ok
+test_kernel_etimedout (tests.test_probe.ClassificationTest.test_kernel_etimedout) ... ok
+test_local_error (tests.test_probe.ClassificationTest.test_local_error) ... ok
+test_net_unreachable (tests.test_probe.ClassificationTest.test_net_unreachable) ... ok
+test_refused (tests.test_probe.ClassificationTest.test_refused) ... ok
+test_retry_only_on_timeout (tests.test_probe.ClassificationTest.test_retry_only_on_timeout) ... ok
+test_socket_closed_on_success (tests.test_probe.ClassificationTest.test_socket_closed_on_success) ... ok
+test_socket_timeout (tests.test_probe.ClassificationTest.test_socket_timeout) ... ok
+test_closed (tests.test_probe.RealSocketTest.test_closed) ... ok
+test_open (tests.test_probe.RealSocketTest.test_open) ... ok
+test_timeout_and_retries (tests.test_probe.RealSocketTest.test_timeout_and_retries) ... ok
+test_invalid (tests.test_probe.ResolveTest.test_invalid) ... ok
+test_ipv4_literal (tests.test_probe.ResolveTest.test_ipv4_literal) ... ok
+test_localhost_prefers_ipv4 (tests.test_probe.ResolveTest.test_localhost_prefers_ipv4) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.882s
+
+OK
+# exit=0  fim: 2026-11-24T15:27:02-03:00
+

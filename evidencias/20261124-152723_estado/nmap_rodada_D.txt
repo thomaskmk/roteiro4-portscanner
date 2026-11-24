@@ -1,0 +1,9 @@
+# Nmap 7.991 scan initiated Tue Nov 24 15:27:35 2026 as: /usr/lib/nmap/nmap --privileged -sT -Pn --reason -p 80,9000 -oN /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/nmap_rodada_D.txt 172.30.0.10
+Nmap scan report for 172.30.0.10
+Host is up, received user-set.
+
+PORT     STATE    SERVICE    REASON
+80/tcp   filtered http       no-response
+9000/tcp filtered cslistener no-response
+
+# Nmap done at Tue Nov 24 15:27:40 2026 -- 1 IP address (1 host up) scanned in 5.53 seconds

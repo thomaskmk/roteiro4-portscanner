@@ -1,0 +1,9 @@
+target,ip,port,status,nmap_equivalent,elapsed_ms,attempts,errno_name,detail,service_hint,timestamp
+172.30.0.10,172.30.0.10,22,recusada,closed,0.092,1,ECONNREFUSED,recusada pelo destino (RST ou ICMP port-unreachable),ssh,2026-11-24T15:27:17.354-03:00
+172.30.0.10,172.30.0.10,80,aberta,open,0.881,1,,handshake TCP concluído,http,2026-11-24T15:27:17.355-03:00
+172.30.0.10,172.30.0.10,8080,aberta,open,0.504,1,,handshake TCP concluído,http-alt,2026-11-24T15:27:17.355-03:00
+172.30.0.10,172.30.0.10,9000,aberta,open,0.042,1,,handshake TCP concluído,,2026-11-24T15:27:17.355-03:00
+172.30.0.10,172.30.0.10,9001,timeout,filtered,2002.281,1,,sem resposta em 2s (causa indeterminada),,2026-11-24T15:27:19.357-03:00
+172.30.0.10,172.30.0.10,9002,recusada,closed,0.012,1,ECONNREFUSED,recusada pelo destino (RST ou ICMP port-unreachable),,2026-11-24T15:27:17.355-03:00
+172.30.0.10,172.30.0.10,9003,erro,filtered,0.021,1,EHOSTUNREACH,No route to host,,2026-11-24T15:27:17.355-03:00
+172.30.0.10,172.30.0.10,9004,recusada,closed,0.023,1,ECONNREFUSED,recusada pelo destino (RST ou ICMP port-unreachable),,2026-11-24T15:27:17.355-03:00

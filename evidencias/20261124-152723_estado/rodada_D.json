@@ -1,0 +1,48 @@
+{
+  "scanner": "portscanner",
+  "version": "1.0.0",
+  "target": "172.30.0.10",
+  "ip": "172.30.0.10",
+  "family": "IPv4",
+  "ports_spec": "80,9000",
+  "ports_requested": 2,
+  "ports_tested": 2,
+  "timeout_s": 5.0,
+  "workers": 2,
+  "retries": 0,
+  "started_at": "2026-11-24T15:27:32-03:00",
+  "finished_at": "2026-11-24T15:27:35-03:00",
+  "duration_s": 3.0781,
+  "interrupted": false,
+  "summary": {
+    "aberta": 0,
+    "recusada": 0,
+    "timeout": 0,
+    "erro": 2,
+    "erro-local": 0
+  },
+  "results": [
+    {
+      "port": 80,
+      "status": "erro",
+      "elapsed_ms": 3077.651,
+      "errno_name": "EHOSTUNREACH",
+      "detail": "No route to host",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:35.379-03:00",
+      "service_hint": "http",
+      "nmap_equivalent": "filtered"
+    },
+    {
+      "port": 9000,
+      "status": "erro",
+      "elapsed_ms": 3077.535,
+      "errno_name": "EHOSTUNREACH",
+      "detail": "No route to host",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:35.379-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "filtered"
+    }
+  ]
+}

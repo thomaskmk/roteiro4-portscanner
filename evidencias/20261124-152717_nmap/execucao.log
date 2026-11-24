@@ -1,0 +1,42 @@
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080,9000-9004 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152717_nmap/scanner.json --csv /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152717_nmap/scanner.csv
+# início: 2026-11-24T15:27:17-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 8  |  timeout: 2s  |  workers: 8  |  retries: 0
+Início: 2026-11-24T15:27:17-03:00
+
+PORTA     ESTADO    ≈NMAP     TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  --------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp    recusada  closed         0.09      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+80/tcp    aberta    open           0.88      1  -             handshake TCP concluído                               http
+8080/tcp  aberta    open           0.50      1  -             handshake TCP concluído                               http-alt
+9000/tcp  aberta    open           0.04      1  -             handshake TCP concluído                               -
+9001/tcp  timeout   filtered    2002.28      1  -             sem resposta em 2s (causa indeterminada)              -
+9002/tcp  recusada  closed         0.01      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  -
+9003/tcp  erro      filtered       0.02      1  EHOSTUNREACH  No route to host                                      -
+9004/tcp  recusada  closed         0.02      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 3 aberta, 3 recusada, 1 timeout, 1 erro — 8/8 portas em 2.004s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152717_nmap/scanner.json
+CSV salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152717_nmap/scanner.csv
+# exit=0  fim: 2026-11-24T15:27:19-03:00
+
+$ nmap -sT -Pn --reason -p 22,80,8080,9000-9004 172.30.0.10 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152717_nmap/nmap
+# início: 2026-11-24T15:27:19-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set (0.00064s latency).
+
+PORT     STATE    SERVICE    REASON
+22/tcp   closed   ssh        conn-refused
+80/tcp   open     http       syn-ack
+8080/tcp open     http-proxy syn-ack
+9000/tcp open     cslistener syn-ack
+9001/tcp filtered tor-orport no-response
+9002/tcp closed   dynamid    conn-refused
+9003/tcp filtered unknown    host-unreach
+9004/tcp closed   unknown    conn-refused
+
+Nmap done: 1 IP address (1 host up) scanned in 3.73 seconds
+# exit=0  fim: 2026-11-24T15:27:23-03:00
+

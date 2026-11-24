@@ -1,0 +1,114 @@
+{
+  "scanner": "portscanner",
+  "version": "1.0.0",
+  "target": "172.30.0.10",
+  "ip": "172.30.0.10",
+  "family": "IPv4",
+  "ports_spec": "22,80,8080,9000-9004",
+  "ports_requested": 8,
+  "ports_tested": 8,
+  "timeout_s": 2.0,
+  "workers": 8,
+  "retries": 0,
+  "started_at": "2026-11-24T15:27:17-03:00",
+  "finished_at": "2026-11-24T15:27:19-03:00",
+  "duration_s": 2.0044,
+  "interrupted": false,
+  "summary": {
+    "aberta": 3,
+    "recusada": 3,
+    "timeout": 1,
+    "erro": 1,
+    "erro-local": 0
+  },
+  "results": [
+    {
+      "port": 22,
+      "status": "recusada",
+      "elapsed_ms": 0.092,
+      "errno_name": "ECONNREFUSED",
+      "detail": "recusada pelo destino (RST ou ICMP port-unreachable)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.354-03:00",
+      "service_hint": "ssh",
+      "nmap_equivalent": "closed"
+    },
+    {
+      "port": 80,
+      "status": "aberta",
+      "elapsed_ms": 0.881,
+      "errno_name": null,
+      "detail": "handshake TCP concluído",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.355-03:00",
+      "service_hint": "http",
+      "nmap_equivalent": "open"
+    },
+    {
+      "port": 8080,
+      "status": "aberta",
+      "elapsed_ms": 0.504,
+      "errno_name": null,
+      "detail": "handshake TCP concluído",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.355-03:00",
+      "service_hint": "http-alt",
+      "nmap_equivalent": "open"
+    },
+    {
+      "port": 9000,
+      "status": "aberta",
+      "elapsed_ms": 0.042,
+      "errno_name": null,
+      "detail": "handshake TCP concluído",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.355-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "open"
+    },
+    {
+      "port": 9001,
+      "status": "timeout",
+      "elapsed_ms": 2002.281,
+      "errno_name": null,
+      "detail": "sem resposta em 2s (causa indeterminada)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:19.357-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "filtered"
+    },
+    {
+      "port": 9002,
+      "status": "recusada",
+      "elapsed_ms": 0.012,
+      "errno_name": "ECONNREFUSED",
+      "detail": "recusada pelo destino (RST ou ICMP port-unreachable)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.355-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "closed"
+    },
+    {
+      "port": 9003,
+      "status": "erro",
+      "elapsed_ms": 0.021,
+      "errno_name": "EHOSTUNREACH",
+      "detail": "No route to host",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.355-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "filtered"
+    },
+    {
+      "port": 9004,
+      "status": "recusada",
+      "elapsed_ms": 0.023,
+      "errno_name": "ECONNREFUSED",
+      "detail": "recusada pelo destino (RST ou ICMP port-unreachable)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:17.355-03:00",
+      "service_hint": null,
+      "nmap_equivalent": "closed"
+    }
+  ]
+}

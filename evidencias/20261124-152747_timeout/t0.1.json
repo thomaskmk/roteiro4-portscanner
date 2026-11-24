@@ -1,0 +1,59 @@
+{
+  "scanner": "portscanner",
+  "version": "1.0.0",
+  "target": "172.30.0.10",
+  "ip": "172.30.0.10",
+  "family": "IPv4",
+  "ports_spec": "22,80,8080",
+  "ports_requested": 3,
+  "ports_tested": 3,
+  "timeout_s": 0.1,
+  "workers": 3,
+  "retries": 0,
+  "started_at": "2026-11-24T15:27:47-03:00",
+  "finished_at": "2026-11-24T15:27:47-03:00",
+  "duration_s": 0.101,
+  "interrupted": false,
+  "summary": {
+    "aberta": 0,
+    "recusada": 0,
+    "timeout": 3,
+    "erro": 0,
+    "erro-local": 0
+  },
+  "results": [
+    {
+      "port": 22,
+      "status": "timeout",
+      "elapsed_ms": 100.68,
+      "errno_name": null,
+      "detail": "sem resposta em 0.1s (causa indeterminada)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:47.627-03:00",
+      "service_hint": "ssh",
+      "nmap_equivalent": "filtered"
+    },
+    {
+      "port": 80,
+      "status": "timeout",
+      "elapsed_ms": 100.562,
+      "errno_name": null,
+      "detail": "sem resposta em 0.1s (causa indeterminada)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:47.627-03:00",
+      "service_hint": "http",
+      "nmap_equivalent": "filtered"
+    },
+    {
+      "port": 8080,
+      "status": "timeout",
+      "elapsed_ms": 100.516,
+      "errno_name": null,
+      "detail": "sem resposta em 0.1s (causa indeterminada)",
+      "attempts": 1,
+      "timestamp": "2026-11-24T15:27:47.627-03:00",
+      "service_hint": "http-alt",
+      "nmap_equivalent": "filtered"
+    }
+  ]
+}

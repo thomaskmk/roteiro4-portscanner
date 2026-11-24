@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.991 scan initiated Tue Nov 24 15:27:52 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sT -Pn -&#45;reason -&#45;initial-rtt-timeout 100ms -&#45;max-rtt-timeout 100ms -&#45;max-retries 0 -p 22,80,8080 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/nmap_rtt100ms 172.30.0.10 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sT -Pn -&#45;reason -&#45;initial-rtt-timeout 100ms -&#45;max-rtt-timeout 100ms -&#45;max-retries 0 -p 22,80,8080 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/nmap_rtt100ms 172.30.0.10" start="1795544872" startstr="Tue Nov 24 15:27:52 2026" version="7.991" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="3" services="22,80,8080"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1795544874" endtime="1795544874"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="172.30.0.10" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8080"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http-proxy" method="table" conf="3"/></port>
+</ports>
+</host>
+<runstats><finished time="1795544874" timestr="Tue Nov 24 15:27:54 2026" summary="Nmap done at Tue Nov 24 15:27:54 2026; 1 IP address (1 host up) scanned in 2.63 seconds" elapsed="2.63" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

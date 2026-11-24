@@ -1,0 +1,520 @@
+$ python3 -m portscanner 172.30.0.10 -p 10000-10099 -t 0.5 -w 1 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w1.json
+# início: 2026-11-24T15:27:54-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 100  |  timeout: 0.5s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T15:27:54-03:00
+
+PORTA      ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                     SERVIÇO PROVÁVEL*
+---------  -------  --------  ---------  -----  -----  ------------------------------------------  -----------------
+10000/tcp  timeout  filtered     501.23      1  -      sem resposta em 0.5s (causa indeterminada)  webmin
+10001/tcp  timeout  filtered     501.68      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10002/tcp  timeout  filtered     500.77      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10003/tcp  timeout  filtered     501.69      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10004/tcp  timeout  filtered     500.83      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10005/tcp  timeout  filtered     501.00      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10006/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10007/tcp  timeout  filtered     501.23      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10008/tcp  timeout  filtered     501.20      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10009/tcp  timeout  filtered     500.96      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10010/tcp  timeout  filtered     500.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10011/tcp  timeout  filtered     500.84      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10012/tcp  timeout  filtered     501.05      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10013/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10014/tcp  timeout  filtered     501.11      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10015/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10016/tcp  timeout  filtered     501.12      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10017/tcp  timeout  filtered     501.09      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10018/tcp  timeout  filtered     501.46      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10019/tcp  timeout  filtered     501.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10020/tcp  timeout  filtered     500.52      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10021/tcp  timeout  filtered     501.02      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10022/tcp  timeout  filtered     500.59      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10023/tcp  timeout  filtered     501.24      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10024/tcp  timeout  filtered     500.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10025/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10026/tcp  timeout  filtered     501.14      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10027/tcp  timeout  filtered     501.12      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10028/tcp  timeout  filtered     503.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10029/tcp  timeout  filtered     501.07      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10030/tcp  timeout  filtered     501.30      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10031/tcp  timeout  filtered     501.77      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10032/tcp  timeout  filtered     501.17      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10033/tcp  timeout  filtered     501.75      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10034/tcp  timeout  filtered     501.07      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10035/tcp  timeout  filtered     500.90      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10036/tcp  timeout  filtered     501.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10037/tcp  timeout  filtered     500.86      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10038/tcp  timeout  filtered     501.03      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10039/tcp  timeout  filtered     500.96      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10040/tcp  timeout  filtered     501.16      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10041/tcp  timeout  filtered     500.89      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10042/tcp  timeout  filtered     501.17      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10043/tcp  timeout  filtered     500.65      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10044/tcp  timeout  filtered     501.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10045/tcp  timeout  filtered     500.96      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10046/tcp  timeout  filtered     501.15      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10047/tcp  timeout  filtered     500.95      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10048/tcp  timeout  filtered     500.82      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10049/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10050/tcp  timeout  filtered     501.16      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-agent
+10051/tcp  timeout  filtered     501.01      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-trapper
+10052/tcp  timeout  filtered     501.27      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10053/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10054/tcp  timeout  filtered     501.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10055/tcp  timeout  filtered     500.92      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10056/tcp  timeout  filtered     501.13      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10057/tcp  timeout  filtered     500.62      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10058/tcp  timeout  filtered     501.06      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10059/tcp  timeout  filtered     500.88      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10060/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10061/tcp  timeout  filtered     500.90      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10062/tcp  timeout  filtered     501.02      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10063/tcp  timeout  filtered     500.97      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10064/tcp  timeout  filtered     501.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10065/tcp  timeout  filtered     500.90      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10066/tcp  timeout  filtered     500.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10067/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10068/tcp  timeout  filtered     501.27      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10069/tcp  timeout  filtered     500.48      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10070/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10071/tcp  timeout  filtered     500.51      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10072/tcp  timeout  filtered     501.11      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10073/tcp  timeout  filtered     500.91      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10074/tcp  timeout  filtered     501.05      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10075/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10076/tcp  timeout  filtered     501.27      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10077/tcp  timeout  filtered     500.95      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10078/tcp  timeout  filtered     501.18      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10079/tcp  timeout  filtered     501.14      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10080/tcp  timeout  filtered     501.11      1  -      sem resposta em 0.5s (causa indeterminada)  amanda
+10081/tcp  timeout  filtered     501.10      1  -      sem resposta em 0.5s (causa indeterminada)  kamanda
+10082/tcp  timeout  filtered     501.10      1  -      sem resposta em 0.5s (causa indeterminada)  amandaidx
+10083/tcp  timeout  filtered     500.86      1  -      sem resposta em 0.5s (causa indeterminada)  amidxtape
+10084/tcp  timeout  filtered     501.78      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10085/tcp  timeout  filtered     500.79      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10086/tcp  timeout  filtered     501.46      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10087/tcp  timeout  filtered     500.83      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10088/tcp  timeout  filtered     500.97      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10089/tcp  timeout  filtered     501.46      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10090/tcp  timeout  filtered     501.98      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10091/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10092/tcp  timeout  filtered     501.13      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10093/tcp  timeout  filtered     501.75      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10094/tcp  timeout  filtered     501.98      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10095/tcp  timeout  filtered     501.51      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10096/tcp  timeout  filtered     500.51      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10097/tcp  timeout  filtered     501.01      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10098/tcp  timeout  filtered     500.84      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10099/tcp  timeout  filtered     501.30      1  -      sem resposta em 0.5s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 100 timeout — 100/100 portas em 50.138s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w1.json
+# exit=0  fim: 2026-11-24T15:28:45-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 10000-10099 -t 0.5 -w 10 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w10.json
+# início: 2026-11-24T15:28:45-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 100  |  timeout: 0.5s  |  workers: 10  |  retries: 0
+Início: 2026-11-24T15:28:45-03:00
+
+PORTA      ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                     SERVIÇO PROVÁVEL*
+---------  -------  --------  ---------  -----  -----  ------------------------------------------  -----------------
+10000/tcp  timeout  filtered     502.87      1  -      sem resposta em 0.5s (causa indeterminada)  webmin
+10001/tcp  timeout  filtered     502.06      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10002/tcp  timeout  filtered     502.58      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10003/tcp  timeout  filtered     501.79      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10004/tcp  timeout  filtered     502.23      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10005/tcp  timeout  filtered     501.39      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10006/tcp  timeout  filtered     502.03      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10007/tcp  timeout  filtered     501.49      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10008/tcp  timeout  filtered     501.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10009/tcp  timeout  filtered     500.71      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10010/tcp  timeout  filtered     501.43      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10011/tcp  timeout  filtered     500.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10012/tcp  timeout  filtered     500.78      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10013/tcp  timeout  filtered     500.85      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10014/tcp  timeout  filtered     500.58      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10015/tcp  timeout  filtered     500.95      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10016/tcp  timeout  filtered     500.86      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10017/tcp  timeout  filtered     500.65      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10018/tcp  timeout  filtered     500.47      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10019/tcp  timeout  filtered     500.31      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10020/tcp  timeout  filtered     501.20      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10021/tcp  timeout  filtered     501.00      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10022/tcp  timeout  filtered     501.19      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10023/tcp  timeout  filtered     500.69      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10024/tcp  timeout  filtered     500.26      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10025/tcp  timeout  filtered     501.17      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10026/tcp  timeout  filtered     501.49      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10027/tcp  timeout  filtered     501.26      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10028/tcp  timeout  filtered     501.30      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10029/tcp  timeout  filtered     501.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10030/tcp  timeout  filtered     502.79      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10031/tcp  timeout  filtered     502.55      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10032/tcp  timeout  filtered     502.22      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10033/tcp  timeout  filtered     502.19      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10034/tcp  timeout  filtered     501.95      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10035/tcp  timeout  filtered     501.55      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10036/tcp  timeout  filtered     501.39      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10037/tcp  timeout  filtered     501.07      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10038/tcp  timeout  filtered     500.90      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10039/tcp  timeout  filtered     500.48      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10040/tcp  timeout  filtered     502.21      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10041/tcp  timeout  filtered     500.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10042/tcp  timeout  filtered     501.39      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10043/tcp  timeout  filtered     501.77      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10044/tcp  timeout  filtered     501.17      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10045/tcp  timeout  filtered     501.74      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10046/tcp  timeout  filtered     501.29      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10047/tcp  timeout  filtered     501.33      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10048/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10049/tcp  timeout  filtered     500.47      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10050/tcp  timeout  filtered     502.04      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-agent
+10051/tcp  timeout  filtered     500.87      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-trapper
+10052/tcp  timeout  filtered     501.00      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10053/tcp  timeout  filtered     500.79      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10054/tcp  timeout  filtered     500.76      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10055/tcp  timeout  filtered     500.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10056/tcp  timeout  filtered     500.70      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10057/tcp  timeout  filtered     500.89      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10058/tcp  timeout  filtered     500.75      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10059/tcp  timeout  filtered     500.59      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10060/tcp  timeout  filtered     501.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10061/tcp  timeout  filtered     501.02      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10062/tcp  timeout  filtered     500.86      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10063/tcp  timeout  filtered     500.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10064/tcp  timeout  filtered     501.59      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10065/tcp  timeout  filtered     501.32      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10066/tcp  timeout  filtered     501.05      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10067/tcp  timeout  filtered     501.20      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10068/tcp  timeout  filtered     500.70      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10069/tcp  timeout  filtered     501.10      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10070/tcp  timeout  filtered     501.39      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10071/tcp  timeout  filtered     501.52      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10072/tcp  timeout  filtered     500.47      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10073/tcp  timeout  filtered     500.53      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10074/tcp  timeout  filtered     500.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10075/tcp  timeout  filtered     500.71      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10076/tcp  timeout  filtered     500.67      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10077/tcp  timeout  filtered     500.44      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10078/tcp  timeout  filtered     500.26      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10079/tcp  timeout  filtered     500.50      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10080/tcp  timeout  filtered     502.83      1  -      sem resposta em 0.5s (causa indeterminada)  amanda
+10081/tcp  timeout  filtered     501.06      1  -      sem resposta em 0.5s (causa indeterminada)  kamanda
+10082/tcp  timeout  filtered     501.32      1  -      sem resposta em 0.5s (causa indeterminada)  amandaidx
+10083/tcp  timeout  filtered     501.40      1  -      sem resposta em 0.5s (causa indeterminada)  amidxtape
+10084/tcp  timeout  filtered     501.40      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10085/tcp  timeout  filtered     501.45      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10086/tcp  timeout  filtered     501.51      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10087/tcp  timeout  filtered     501.48      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10088/tcp  timeout  filtered     501.53      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10089/tcp  timeout  filtered     501.55      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10090/tcp  timeout  filtered     501.24      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10091/tcp  timeout  filtered     501.29      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10092/tcp  timeout  filtered     500.91      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10093/tcp  timeout  filtered     500.97      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10094/tcp  timeout  filtered     500.84      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10095/tcp  timeout  filtered     500.23      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10096/tcp  timeout  filtered     500.81      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10097/tcp  timeout  filtered     500.66      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10098/tcp  timeout  filtered     500.53      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10099/tcp  timeout  filtered     500.52      1  -      sem resposta em 0.5s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 100 timeout — 100/100 portas em 5.014s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w10.json
+# exit=0  fim: 2026-11-24T15:28:50-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 10000-10099 -t 0.5 -w 50 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w50.json
+# início: 2026-11-24T15:28:50-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 100  |  timeout: 0.5s  |  workers: 50  |  retries: 0
+Início: 2026-11-24T15:28:50-03:00
+
+PORTA      ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                     SERVIÇO PROVÁVEL*
+---------  -------  --------  ---------  -----  -----  ------------------------------------------  -----------------
+10000/tcp  timeout  filtered     506.30      1  -      sem resposta em 0.5s (causa indeterminada)  webmin
+10001/tcp  timeout  filtered     502.26      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10002/tcp  timeout  filtered     505.77      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10003/tcp  timeout  filtered     502.34      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10004/tcp  timeout  filtered     508.02      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10005/tcp  timeout  filtered     501.49      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10006/tcp  timeout  filtered     506.39      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10007/tcp  timeout  filtered     502.26      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10008/tcp  timeout  filtered     507.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10009/tcp  timeout  filtered     504.18      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10010/tcp  timeout  filtered     504.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10011/tcp  timeout  filtered     504.32      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10012/tcp  timeout  filtered     504.40      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10013/tcp  timeout  filtered     504.48      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10014/tcp  timeout  filtered     504.55      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10015/tcp  timeout  filtered     504.62      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10016/tcp  timeout  filtered     504.70      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10017/tcp  timeout  filtered     504.77      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10018/tcp  timeout  filtered     504.84      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10019/tcp  timeout  filtered     507.88      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10020/tcp  timeout  filtered     507.95      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10021/tcp  timeout  filtered     507.61      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10022/tcp  timeout  filtered     506.07      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10023/tcp  timeout  filtered     505.56      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10024/tcp  timeout  filtered     505.44      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10025/tcp  timeout  filtered     502.20      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10026/tcp  timeout  filtered     502.47      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10027/tcp  timeout  filtered     502.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10028/tcp  timeout  filtered     502.62      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10029/tcp  timeout  filtered     502.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10030/tcp  timeout  filtered     502.78      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10031/tcp  timeout  filtered     502.86      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10032/tcp  timeout  filtered     502.93      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10033/tcp  timeout  filtered     503.01      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10034/tcp  timeout  filtered     503.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10035/tcp  timeout  filtered     503.15      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10036/tcp  timeout  filtered     503.21      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10037/tcp  timeout  filtered     503.28      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10038/tcp  timeout  filtered     503.35      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10039/tcp  timeout  filtered     501.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10040/tcp  timeout  filtered     501.88      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10041/tcp  timeout  filtered     501.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10042/tcp  timeout  filtered     501.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10043/tcp  timeout  filtered     504.15      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10044/tcp  timeout  filtered     504.59      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10045/tcp  timeout  filtered     506.03      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10046/tcp  timeout  filtered     503.57      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10047/tcp  timeout  filtered     503.93      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10048/tcp  timeout  filtered     504.10      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10049/tcp  timeout  filtered     504.36      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10050/tcp  timeout  filtered     501.41      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-agent
+10051/tcp  timeout  filtered     501.35      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-trapper
+10052/tcp  timeout  filtered     501.36      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10053/tcp  timeout  filtered     501.32      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10054/tcp  timeout  filtered     501.28      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10055/tcp  timeout  filtered     501.24      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10056/tcp  timeout  filtered     501.14      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10057/tcp  timeout  filtered     501.11      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10058/tcp  timeout  filtered     501.44      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10059/tcp  timeout  filtered     501.41      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10060/tcp  timeout  filtered     501.37      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10061/tcp  timeout  filtered     501.32      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10062/tcp  timeout  filtered     501.32      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10063/tcp  timeout  filtered     501.30      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10064/tcp  timeout  filtered     501.28      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10065/tcp  timeout  filtered     501.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10066/tcp  timeout  filtered     501.21      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10067/tcp  timeout  filtered     501.18      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10068/tcp  timeout  filtered     501.14      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10069/tcp  timeout  filtered     501.33      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10070/tcp  timeout  filtered     502.05      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10071/tcp  timeout  filtered     501.90      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10072/tcp  timeout  filtered     501.21      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10073/tcp  timeout  filtered     501.33      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10074/tcp  timeout  filtered     501.15      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10075/tcp  timeout  filtered     501.31      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10076/tcp  timeout  filtered     501.27      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10077/tcp  timeout  filtered     501.00      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10078/tcp  timeout  filtered     500.97      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10079/tcp  timeout  filtered     500.60      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10080/tcp  timeout  filtered     500.36      1  -      sem resposta em 0.5s (causa indeterminada)  amanda
+10081/tcp  timeout  filtered     500.82      1  -      sem resposta em 0.5s (causa indeterminada)  kamanda
+10082/tcp  timeout  filtered     500.77      1  -      sem resposta em 0.5s (causa indeterminada)  amandaidx
+10083/tcp  timeout  filtered     501.17      1  -      sem resposta em 0.5s (causa indeterminada)  amidxtape
+10084/tcp  timeout  filtered     500.40      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10085/tcp  timeout  filtered     501.04      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10086/tcp  timeout  filtered     500.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10087/tcp  timeout  filtered     501.15      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10088/tcp  timeout  filtered     501.10      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10089/tcp  timeout  filtered     500.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10090/tcp  timeout  filtered     500.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10091/tcp  timeout  filtered     500.55      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10092/tcp  timeout  filtered     500.81      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10093/tcp  timeout  filtered     500.67      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10094/tcp  timeout  filtered     501.30      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10095/tcp  timeout  filtered     500.56      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10096/tcp  timeout  filtered     501.04      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10097/tcp  timeout  filtered     500.86      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10098/tcp  timeout  filtered     500.70      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10099/tcp  timeout  filtered     500.50      1  -      sem resposta em 0.5s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 100 timeout — 100/100 portas em 1.013s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w50.json
+# exit=0  fim: 2026-11-24T15:28:51-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 10000-10099 -t 0.5 -w 100 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w100.json
+# início: 2026-11-24T15:28:51-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 100  |  timeout: 0.5s  |  workers: 100  |  retries: 0
+Início: 2026-11-24T15:28:51-03:00
+
+PORTA      ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                     SERVIÇO PROVÁVEL*
+---------  -------  --------  ---------  -----  -----  ------------------------------------------  -----------------
+10000/tcp  timeout  filtered     510.62      1  -      sem resposta em 0.5s (causa indeterminada)  webmin
+10001/tcp  timeout  filtered     501.16      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10002/tcp  timeout  filtered     501.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10003/tcp  timeout  filtered     501.59      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10004/tcp  timeout  filtered     501.61      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10005/tcp  timeout  filtered     501.63      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10006/tcp  timeout  filtered     501.65      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10007/tcp  timeout  filtered     508.49      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10008/tcp  timeout  filtered     501.69      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10009/tcp  timeout  filtered     501.75      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10010/tcp  timeout  filtered     501.79      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10011/tcp  timeout  filtered     501.82      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10012/tcp  timeout  filtered     501.86      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10013/tcp  timeout  filtered     501.88      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10014/tcp  timeout  filtered     501.92      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10015/tcp  timeout  filtered     501.96      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10016/tcp  timeout  filtered     501.99      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10017/tcp  timeout  filtered     502.02      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10018/tcp  timeout  filtered     502.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10019/tcp  timeout  filtered     502.11      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10020/tcp  timeout  filtered     502.14      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10021/tcp  timeout  filtered     502.18      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10022/tcp  timeout  filtered     502.21      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10023/tcp  timeout  filtered     502.24      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10024/tcp  timeout  filtered     505.20      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10025/tcp  timeout  filtered     508.62      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10026/tcp  timeout  filtered     508.71      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10027/tcp  timeout  filtered     508.35      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10028/tcp  timeout  filtered     504.42      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10029/tcp  timeout  filtered     509.02      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10030/tcp  timeout  filtered     505.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10031/tcp  timeout  filtered     508.89      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10032/tcp  timeout  filtered     504.81      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10033/tcp  timeout  filtered     504.51      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10034/tcp  timeout  filtered     504.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10035/tcp  timeout  filtered     504.63      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10036/tcp  timeout  filtered     504.55      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10037/tcp  timeout  filtered     504.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10038/tcp  timeout  filtered     505.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10039/tcp  timeout  filtered     505.45      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10040/tcp  timeout  filtered     503.82      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10041/tcp  timeout  filtered     502.23      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10042/tcp  timeout  filtered     502.27      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10043/tcp  timeout  filtered     507.52      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10044/tcp  timeout  filtered     504.51      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10045/tcp  timeout  filtered     502.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10046/tcp  timeout  filtered     504.52      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10047/tcp  timeout  filtered     507.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10048/tcp  timeout  filtered     506.42      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10049/tcp  timeout  filtered     504.33      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10050/tcp  timeout  filtered     501.43      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-agent
+10051/tcp  timeout  filtered     501.25      1  -      sem resposta em 0.5s (causa indeterminada)  zabbix-trapper
+10052/tcp  timeout  filtered     501.16      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10053/tcp  timeout  filtered     507.46      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10054/tcp  timeout  filtered     501.94      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10055/tcp  timeout  filtered     501.21      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10056/tcp  timeout  filtered     502.56      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10057/tcp  timeout  filtered     501.80      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10058/tcp  timeout  filtered     501.34      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10059/tcp  timeout  filtered     501.69      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10060/tcp  timeout  filtered     501.60      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10061/tcp  timeout  filtered     501.34      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10062/tcp  timeout  filtered     501.50      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10063/tcp  timeout  filtered     501.35      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10064/tcp  timeout  filtered     501.38      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10065/tcp  timeout  filtered     506.47      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10066/tcp  timeout  filtered     502.36      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10067/tcp  timeout  filtered     507.15      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10068/tcp  timeout  filtered     507.16      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10069/tcp  timeout  filtered     502.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10070/tcp  timeout  filtered     503.70      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10071/tcp  timeout  filtered     502.26      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10072/tcp  timeout  filtered     507.10      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10073/tcp  timeout  filtered     502.49      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10074/tcp  timeout  filtered     501.58      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10075/tcp  timeout  filtered     506.45      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10076/tcp  timeout  filtered     501.62      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10077/tcp  timeout  filtered     501.88      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10078/tcp  timeout  filtered     501.69      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10079/tcp  timeout  filtered     501.72      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10080/tcp  timeout  filtered     501.75      1  -      sem resposta em 0.5s (causa indeterminada)  amanda
+10081/tcp  timeout  filtered     500.33      1  -      sem resposta em 0.5s (causa indeterminada)  kamanda
+10082/tcp  timeout  filtered     505.78      1  -      sem resposta em 0.5s (causa indeterminada)  amandaidx
+10083/tcp  timeout  filtered     506.09      1  -      sem resposta em 0.5s (causa indeterminada)  amidxtape
+10084/tcp  timeout  filtered     505.76      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10085/tcp  timeout  filtered     506.22      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10086/tcp  timeout  filtered     506.08      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10087/tcp  timeout  filtered     505.73      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10088/tcp  timeout  filtered     505.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10089/tcp  timeout  filtered     503.43      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10090/tcp  timeout  filtered     503.49      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10091/tcp  timeout  filtered     503.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10092/tcp  timeout  filtered     503.57      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10093/tcp  timeout  filtered     503.61      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10094/tcp  timeout  filtered     502.54      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10095/tcp  timeout  filtered     502.58      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10096/tcp  timeout  filtered     502.62      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10097/tcp  timeout  filtered     502.66      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10098/tcp  timeout  filtered     502.70      1  -      sem resposta em 0.5s (causa indeterminada)  -
+10099/tcp  timeout  filtered     505.25      1  -      sem resposta em 0.5s (causa indeterminada)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 100 timeout — 100/100 portas em 0.516s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/lenta_w100.json
+# exit=0  fim: 2026-11-24T15:28:51-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 20000-20999 -t 0.5 -w 1 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w1.json
+# início: 2026-11-24T15:28:51-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1000  |  timeout: 0.5s  |  workers: 1  |  retries: 0
+Início: 2026-11-24T15:28:51-03:00
+
+PORTA  ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE  SERVIÇO PROVÁVEL*
+-----  ------  -----  ---------  -----  -----  -------  -----------------
+(nenhuma porta a exibir com este filtro)
+... 1000 porta(s) não exibida(s) pelo filtro (use --all para ver todas)
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1000 recusada — 1000/1000 portas em 0.024s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w1.json
+# exit=0  fim: 2026-11-24T15:28:52-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 20000-20999 -t 0.5 -w 10 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w10.json
+# início: 2026-11-24T15:28:52-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1000  |  timeout: 0.5s  |  workers: 10  |  retries: 0
+Início: 2026-11-24T15:28:52-03:00
+
+PORTA  ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE  SERVIÇO PROVÁVEL*
+-----  ------  -----  ---------  -----  -----  -------  -----------------
+(nenhuma porta a exibir com este filtro)
+... 1000 porta(s) não exibida(s) pelo filtro (use --all para ver todas)
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1000 recusada — 1000/1000 portas em 0.023s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w10.json
+# exit=0  fim: 2026-11-24T15:28:52-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 20000-20999 -t 0.5 -w 50 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w50.json
+# início: 2026-11-24T15:28:52-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1000  |  timeout: 0.5s  |  workers: 50  |  retries: 0
+Início: 2026-11-24T15:28:52-03:00
+
+PORTA  ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE  SERVIÇO PROVÁVEL*
+-----  ------  -----  ---------  -----  -----  -------  -----------------
+(nenhuma porta a exibir com este filtro)
+... 1000 porta(s) não exibida(s) pelo filtro (use --all para ver todas)
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1000 recusada — 1000/1000 portas em 0.039s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w50.json
+# exit=0  fim: 2026-11-24T15:28:52-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 20000-20999 -t 0.5 -w 100 --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w100.json
+# início: 2026-11-24T15:28:52-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 1000  |  timeout: 0.5s  |  workers: 100  |  retries: 0
+Início: 2026-11-24T15:28:52-03:00
+
+PORTA  ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE  SERVIÇO PROVÁVEL*
+-----  ------  -----  ---------  -----  -----  -------  -----------------
+(nenhuma porta a exibir com este filtro)
+... 1000 porta(s) não exibida(s) pelo filtro (use --all para ver todas)
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1000 recusada — 1000/1000 portas em 0.032s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152754_desempenho/rapida_w100.json
+# exit=0  fim: 2026-11-24T15:28:52-03:00
+

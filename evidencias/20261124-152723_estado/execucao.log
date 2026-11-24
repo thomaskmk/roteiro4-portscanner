@@ -1,0 +1,177 @@
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml exec -T target svc.sh start echo9000
+# início: 2026-11-24T15:27:23-03:00
+echo9000 já está em execução
+# exit=0  fim: 2026-11-24T15:27:23-03:00
+
+## Rodada A — serviço ativo
+$ python3 -m portscanner 172.30.0.10 -p 80,9000 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_A.json
+# início: 2026-11-24T15:27:23-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 2  |  timeout: 2s  |  workers: 2  |  retries: 0
+Início: 2026-11-24T15:27:23-03:00
+
+PORTA     ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE                  SERVIÇO PROVÁVEL*
+--------  ------  -----  ---------  -----  -----  -----------------------  -----------------
+80/tcp    aberta  open        0.07      1  -      handshake TCP concluído  http
+9000/tcp  aberta  open        0.02      1  -      handshake TCP concluído  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta — 2/2 portas em 0.000s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_A.json
+# exit=0  fim: 2026-11-24T15:27:23-03:00
+
+$ nmap -sT -Pn --reason -p 80,9000 172.30.0.10 -oN /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/nmap_rodada_A.txt
+# início: 2026-11-24T15:27:23-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set (0.00023s latency).
+
+PORT     STATE SERVICE    REASON
+80/tcp   open  http       syn-ack
+9000/tcp open  cslistener syn-ack
+
+Nmap done: 1 IP address (1 host up) scanned in 2.52 seconds
+# exit=0  fim: 2026-11-24T15:27:26-03:00
+
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml exec -T target svc.sh stop echo9000
+# início: 2026-11-24T15:27:26-03:00
+2026-11-24T18:27:26+00:00 echo9000 parado (porta 9000 liberada)
+# exit=0  fim: 2026-11-24T15:27:26-03:00
+
+## Rodada B — serviço interrompido
+$ python3 -m portscanner 172.30.0.10 -p 80,9000 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_B.json
+# início: 2026-11-24T15:27:26-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 2  |  timeout: 2s  |  workers: 2  |  retries: 0
+Início: 2026-11-24T15:27:26-03:00
+
+PORTA     ESTADO    ≈NMAP   TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  ------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+80/tcp    aberta    open         0.34      1  -             handshake TCP concluído                               http
+9000/tcp  recusada  closed       0.02      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 1 aberta, 1 recusada — 2/2 portas em 0.001s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_B.json
+# exit=0  fim: 2026-11-24T15:27:26-03:00
+
+$ nmap -sT -Pn --reason -p 80,9000 172.30.0.10 -oN /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/nmap_rodada_B.txt
+# início: 2026-11-24T15:27:26-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set (0.000084s latency).
+
+PORT     STATE  SERVICE    REASON
+80/tcp   open   http       syn-ack
+9000/tcp closed cslistener conn-refused
+
+Nmap done: 1 IP address (1 host up) scanned in 2.52 seconds
+# exit=0  fim: 2026-11-24T15:27:29-03:00
+
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml exec -T target svc.sh start echo9000
+# início: 2026-11-24T15:27:29-03:00
+2026-11-24T18:27:29+00:00 echo9000 iniciado (porta 9000)
+# exit=0  fim: 2026-11-24T15:27:29-03:00
+
+## Rodada C — serviço reiniciado
+$ python3 -m portscanner 172.30.0.10 -p 80,9000 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_C.json
+# início: 2026-11-24T15:27:29-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 2  |  timeout: 2s  |  workers: 2  |  retries: 0
+Início: 2026-11-24T15:27:29-03:00
+
+PORTA     ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE                  SERVIÇO PROVÁVEL*
+--------  ------  -----  ---------  -----  -----  -----------------------  -----------------
+80/tcp    aberta  open        0.33      1  -      handshake TCP concluído  http
+9000/tcp  aberta  open        0.10      1  -      handshake TCP concluído  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta — 2/2 portas em 0.001s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_C.json
+# exit=0  fim: 2026-11-24T15:27:29-03:00
+
+$ nmap -sT -Pn --reason -p 80,9000 172.30.0.10 -oN /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/nmap_rodada_C.txt
+# início: 2026-11-24T15:27:29-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set (0.00049s latency).
+
+PORT     STATE SERVICE    REASON
+80/tcp   open  http       syn-ack
+9000/tcp open  cslistener syn-ack
+
+Nmap done: 1 IP address (1 host up) scanned in 2.52 seconds
+# exit=0  fim: 2026-11-24T15:27:32-03:00
+
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml stop target
+# início: 2026-11-24T15:27:32-03:00
+ Container portscan-target  Stopping
+ Container portscan-target  Stopped
+# exit=0  fim: 2026-11-24T15:27:32-03:00
+
+## Rodada D — container do alvo parado (IP deixa de existir)
+$ python3 -m portscanner 172.30.0.10 -p 80,9000 -t 5 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_D.json
+# início: 2026-11-24T15:27:32-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 2  |  timeout: 5s  |  workers: 2  |  retries: 0
+Início: 2026-11-24T15:27:32-03:00
+
+PORTA     ESTADO  ≈NMAP     TEMPO(ms)  TENT.  ERRNO         DETALHE           SERVIÇO PROVÁVEL*
+--------  ------  --------  ---------  -----  ------------  ----------------  -----------------
+80/tcp    erro    filtered    3077.65      1  EHOSTUNREACH  No route to host  http
+9000/tcp  erro    filtered    3077.53      1  EHOSTUNREACH  No route to host  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 erro — 2/2 portas em 3.078s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_D.json
+# exit=0  fim: 2026-11-24T15:27:35-03:00
+
+$ nmap -sT -Pn --reason -p 80,9000 172.30.0.10 -oN /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/nmap_rodada_D.txt
+# início: 2026-11-24T15:27:35-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set.
+
+PORT     STATE    SERVICE    REASON
+80/tcp   filtered http       no-response
+9000/tcp filtered cslistener no-response
+
+Nmap done: 1 IP address (1 host up) scanned in 5.53 seconds
+# exit=0  fim: 2026-11-24T15:27:40-03:00
+
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml start target
+# início: 2026-11-24T15:27:40-03:00
+ Container portscan-target  Starting
+ Container portscan-target  Started
+# exit=0  fim: 2026-11-24T15:27:41-03:00
+
+## Rodada E — container reiniciado
+$ python3 -m portscanner 172.30.0.10 -p 80,9000 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_E.json
+# início: 2026-11-24T15:27:44-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 2  |  timeout: 2s  |  workers: 2  |  retries: 0
+Início: 2026-11-24T15:27:44-03:00
+
+PORTA     ESTADO  ≈NMAP  TEMPO(ms)  TENT.  ERRNO  DETALHE                  SERVIÇO PROVÁVEL*
+--------  ------  -----  ---------  -----  -----  -----------------------  -----------------
+80/tcp    aberta  open        0.09      1  -      handshake TCP concluído  http
+9000/tcp  aberta  open        0.02      1  -      handshake TCP concluído  -
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta — 2/2 portas em 0.001s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/rodada_E.json
+# exit=0  fim: 2026-11-24T15:27:44-03:00
+
+$ nmap -sT -Pn --reason -p 80,9000 172.30.0.10 -oN /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152723_estado/nmap_rodada_E.txt
+# início: 2026-11-24T15:27:44-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set (0.00028s latency).
+
+PORT     STATE SERVICE    REASON
+80/tcp   open  http       syn-ack
+9000/tcp open  cslistener syn-ack
+
+Nmap done: 1 IP address (1 host up) scanned in 2.52 seconds
+# exit=0  fim: 2026-11-24T15:27:46-03:00
+

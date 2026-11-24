@@ -1,0 +1,143 @@
+## linha de base: sem latência
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/base.json
+# início: 2026-11-24T15:27:47-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 3  |  timeout: 2s  |  workers: 3  |  retries: 0
+Início: 2026-11-24T15:27:47-03:00
+
+PORTA     ESTADO    ≈NMAP   TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  ------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp    recusada  closed       0.08      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+80/tcp    aberta    open         0.17      1  -             handshake TCP concluído                               http
+8080/tcp  aberta    open         0.20      1  -             handshake TCP concluído                               http-alt
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta, 1 recusada — 3/3 portas em 0.001s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/base.json
+# exit=0  fim: 2026-11-24T15:27:47-03:00
+
+## com 300ms de atraso no alvo
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml exec -T target latency.sh on 300
+# início: 2026-11-24T15:27:47-03:00
+latência de 300ms ativada em eth0
+# exit=0  fim: 2026-11-24T15:27:47-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080 -t 0.1 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t0.1.json
+# início: 2026-11-24T15:27:47-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 3  |  timeout: 0.1s  |  workers: 3  |  retries: 0
+Início: 2026-11-24T15:27:47-03:00
+
+PORTA     ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                     SERVIÇO PROVÁVEL*
+--------  -------  --------  ---------  -----  -----  ------------------------------------------  -----------------
+22/tcp    timeout  filtered     100.68      1  -      sem resposta em 0.1s (causa indeterminada)  ssh
+80/tcp    timeout  filtered     100.56      1  -      sem resposta em 0.1s (causa indeterminada)  http
+8080/tcp  timeout  filtered     100.52      1  -      sem resposta em 0.1s (causa indeterminada)  http-alt
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 3 timeout — 3/3 portas em 0.101s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t0.1.json
+# exit=0  fim: 2026-11-24T15:27:47-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080 -t 0.25 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t0.25.json
+# início: 2026-11-24T15:27:47-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 3  |  timeout: 0.25s  |  workers: 3  |  retries: 0
+Início: 2026-11-24T15:27:47-03:00
+
+PORTA     ESTADO   ≈NMAP     TEMPO(ms)  TENT.  ERRNO  DETALHE                                      SERVIÇO PROVÁVEL*
+--------  -------  --------  ---------  -----  -----  -------------------------------------------  -----------------
+22/tcp    timeout  filtered     251.03      1  -      sem resposta em 0.25s (causa indeterminada)  ssh
+80/tcp    timeout  filtered     251.02      1  -      sem resposta em 0.25s (causa indeterminada)  http
+8080/tcp  timeout  filtered     251.04      1  -      sem resposta em 0.25s (causa indeterminada)  http-alt
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 3 timeout — 3/3 portas em 0.252s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t0.25.json
+# exit=0  fim: 2026-11-24T15:27:47-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080 -t 0.5 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t0.5.json
+# início: 2026-11-24T15:27:47-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 3  |  timeout: 0.5s  |  workers: 3  |  retries: 0
+Início: 2026-11-24T15:27:48-03:00
+
+PORTA     ESTADO    ≈NMAP   TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  ------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp    recusada  closed     300.92      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+80/tcp    aberta    open       301.50      1  -             handshake TCP concluído                               http
+8080/tcp  aberta    open       301.90      1  -             handshake TCP concluído                               http-alt
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta, 1 recusada — 3/3 portas em 0.304s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t0.5.json
+# exit=0  fim: 2026-11-24T15:27:48-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080 -t 1 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t1.json
+# início: 2026-11-24T15:27:48-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 3  |  timeout: 1s  |  workers: 3  |  retries: 0
+Início: 2026-11-24T15:27:48-03:00
+
+PORTA     ESTADO    ≈NMAP   TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  ------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp    recusada  closed     301.57      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+80/tcp    aberta    open       300.89      1  -             handshake TCP concluído                               http
+8080/tcp  aberta    open       301.54      1  -             handshake TCP concluído                               http-alt
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta, 1 recusada — 3/3 portas em 0.304s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t1.json
+# exit=0  fim: 2026-11-24T15:27:48-03:00
+
+$ python3 -m portscanner 172.30.0.10 -p 22,80,8080 -t 2 --all --json /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t2.json
+# início: 2026-11-24T15:27:48-03:00
+portscanner 1.0.0 — TCP connect scan
+Alvo: 172.30.0.10 (172.30.0.10, IPv4)  |  portas: 3  |  timeout: 2s  |  workers: 3  |  retries: 0
+Início: 2026-11-24T15:27:48-03:00
+
+PORTA     ESTADO    ≈NMAP   TEMPO(ms)  TENT.  ERRNO         DETALHE                                               SERVIÇO PROVÁVEL*
+--------  --------  ------  ---------  -----  ------------  ----------------------------------------------------  -----------------
+22/tcp    recusada  closed     301.26      1  ECONNREFUSED  recusada pelo destino (RST ou ICMP port-unreachable)  ssh
+80/tcp    aberta    open       301.53      1  -             handshake TCP concluído                               http
+8080/tcp  aberta    open       301.94      1  -             handshake TCP concluído                               http-alt
+* nome convencional do número da porta (IANA); NÃO confirma o serviço realmente em execução.
+
+Resumo: 2 aberta, 1 recusada — 3/3 portas em 0.304s
+JSON salvo em /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/t2.json
+# exit=0  fim: 2026-11-24T15:27:49-03:00
+
+$ nmap -sT -Pn --reason -p 22,80,8080 172.30.0.10 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/nmap_padrao
+# início: 2026-11-24T15:27:49-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Nmap scan report for 172.30.0.10
+Host is up, received user-set (0.30s latency).
+
+PORT     STATE  SERVICE    REASON
+22/tcp   closed ssh        conn-refused
+80/tcp   open   http       syn-ack
+8080/tcp open   http-proxy syn-ack
+
+Nmap done: 1 IP address (1 host up) scanned in 2.83 seconds
+# exit=0  fim: 2026-11-24T15:27:51-03:00
+
+$ nmap -sT -Pn --reason --initial-rtt-timeout 100ms --max-rtt-timeout 100ms --max-retries 0 -p 22,80,8080 172.30.0.10 -oA /home/thomaskmk/roteiro4-portscanner/evidencias/20261124-152747_timeout/nmap_rtt100ms
+# início: 2026-11-24T15:27:51-03:00
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-24 15:27 -0300
+Warning: 172.30.0.10 giving up on port because retransmission cap hit (0).
+Nmap scan report for 172.30.0.10
+Host is up, received user-set.
+
+PORT     STATE    SERVICE    REASON
+22/tcp   filtered ssh        no-response
+80/tcp   filtered http       no-response
+8080/tcp filtered http-proxy no-response
+
+Nmap done: 1 IP address (1 host up) scanned in 2.63 seconds
+# exit=0  fim: 2026-11-24T15:27:54-03:00
+
+$ docker compose -f /home/thomaskmk/roteiro4-portscanner/lab/docker-compose.yml exec -T target latency.sh off
+# início: 2026-11-24T15:27:54-03:00
+latência removida de eth0
+# exit=0  fim: 2026-11-24T15:27:54-03:00
+
