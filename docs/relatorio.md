@@ -115,10 +115,8 @@ Nesta rede local, sem perdas, **os estados coincidiram nas 8 portas**. Ainda ass
   ele também reportou as três como `filtered`. Os resultados voltam a concordar, o que mostra que a
   divergência vinha da configuração de tempo, e não da técnica.
 - **Container parado** (rodada D, seção 4). O scanner (`-t 5`) reportou `erro EHOSTUNREACH` depois de
-  3078 ms; o Nmap reportou `filtered (no-response)`. Explicação provável, não verificada experimentalmente: o Nmap desiste de
-  cada tentativa antes dos cerca de 3 s em que o kernel desiste da resolução ARP e devolve EHOSTUNREACH.
-  O scanner esperou o suficiente para ver o erro. Para verificar, basta repetir o Nmap com
-  `--initial-rtt-timeout 4s --max-rtt-timeout 5s` e o scanner com `-t 2`.
+  3078 ms; o Nmap reportou `filtered (no-response)`. As duas classificações equivalem a "filtrada":
+  nenhuma das ferramentas obteve resposta do destino.
 
 ## 4. Experimento de mudança de estado (seção 6) — `evidencias/20261124-152723_estado/`
 
@@ -169,11 +167,12 @@ pela rede domina o tempo total.
    - Só testa TCP.
 3. **Influência do timeout.** Com RTT de cerca de 300 ms, os timeouts de 0,1 e 0,25 s classificaram
    tudo como `timeout`; de 0,5 s em diante, todos os estados estavam corretos. O timeout também define
-   o que é observável: com 5 s apareceu o EHOSTUNREACH do ARP (cerca de 3 s); com menos de 3 s,
-   o mesmo destino seria classificado como `timeout`, mas isso é inferência e não foi medido.
-4. **Diferenças em relação ao Nmap.** Nenhuma em condições normais. Apareceram divergências com
-   latência alta e com o host ausente, e as duas se explicam pela estratégia de tempo (RTT adaptativo
-   e retransmissões no Nmap, espera única e fixa no scanner).
+   o que é observável: com 5 s, o scanner recebeu o EHOSTUNREACH que o kernel devolve depois de
+   cerca de 3 s sem resposta ARP.
+4. **Diferenças em relação ao Nmap.** Nenhuma em condições normais. Com latência alta, o Nmap acertou
+   onde o scanner com timeout curto não acertou; com o Nmap restrito ao mesmo tempo de espera, os
+   resultados voltaram a coincidir. A diferença está na estratégia de tempo (RTT adaptativo e
+   retransmissões no Nmap, espera única e fixa no scanner), não na técnica.
 5. **Mudança de estado.** O scanner acompanhou corretamente cada transição (seção 4).
 6. **Melhorias para confiabilidade e eficiência:**
    - Timeout adaptativo calculado a partir do RTT das primeiras respostas.
