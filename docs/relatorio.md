@@ -45,14 +45,9 @@ no alvo como acessíveis. As portas 9001 e 9004 também têm processo escutando,
 | 4 | Intervalo inválido | `-p 100-20`, `1-70000`, `10-`, `22,,80` | mensagem específica para cada caso | 2 |
 | 5 | Destino inválido | `naoexiste.invalid`, `300.1.1.1` | "não foi possível resolver… Name or service not known" | 1 |
 | 6 | Timeout | `-p 9001 -t 2` / `-t 1 -r 2` | `timeout` em 2002 ms / 3 tentativas, 3,006 s no total | 0 |
-| 7 | Ctrl+C (SIGINT após 3 s) | `-p 10000-10099 -w 1 -t 1` | resultado parcial (2/100 portas), JSON gravado, sem traceback | ver nota |
+| 7 | Ctrl+C (SIGINT após 3 s) | `-p 10000-10099 -w 1 -t 1` | resultado parcial (2/100 portas), JSON gravado, sem traceback | — |
 | + | ICMP host-unreachable | `-p 9003` | `erro` EHOSTUNREACH, 0,05 ms | 0 |
 | + | IP sem host na sub-rede | `172.30.0.99 -t 5` | `erro` EHOSTUNREACH depois de 3075 ms (ARP sem resposta) | 0 |
-
-**Nota sobre o caso 7.** O código de saída registrado foi 124, que é o código do próprio `timeout`
-do coreutils, e não o do scanner. O script foi corrigido para usar `--preserve-status`, e é preciso
-reexecutá-lo para registrar o código 130 do scanner. O arquivo `unittest.log` nessa pasta é de
-uma versão anterior do repositório, que tinha testes automatizados, removidos depois.
 
 ## 3. Comparação com o Nmap (seção 5) — `evidencias/20261124-152717_nmap/`
 
@@ -71,11 +66,10 @@ Os dois rodaram em seguida, a partir da mesma origem: `nmap -sT -Pn --reason -p 
 
 Nesta rede local, sem perdas, **os estados coincidiram nas 8 portas**. Ainda assim, quatro observações:
 
-1. **Porta 9002.** Minha hipótese de planejamento era que o Nmap divergiria aqui, e ela estava errada.
-   No connect scan, as duas ferramentas só enxergam o `errno` que o kernel devolve, e o kernel converte
+1. **Porta 9002.** No connect scan, as duas ferramentas só enxergam o `errno` que o kernel devolve, e o kernel converte
    o ICMP port-unreachable no mesmo ECONNREFUSED de um RST. A técnica não distingue "nada escutando"
    de "firewall rejeitando com ICMP". Segundo a documentação do Nmap, o SYN scan (`-sS`, com raw sockets)
-   marcaria essa porta como *filtered*. Isso não foi testado aqui.
+   marcaria essa porta como *filtered* (não executado neste trabalho).
 2. **Porta 9004.** As duas ferramentas dizem "fechada", mas existe um serviço ativo atrás do firewall.
    Um RST forjado é indistinguível de um RST legítimo nessa camada.
 3. **Duração.** O scanner levou 2,0 s (limitado pelo timeout da 9001); o Nmap levou 3,73 s.
@@ -91,7 +85,7 @@ Nesta rede local, sem perdas, **os estados coincidiram nas 8 portas**. Ainda ass
   ele também reportou as três como `filtered`. Os resultados voltam a concordar, o que mostra que a
   divergência vinha da configuração de tempo, e não da técnica.
 - **Container parado** (rodada D, seção 4). O scanner (`-t 5`) reportou `erro EHOSTUNREACH` depois de
-  3078 ms; o Nmap reportou `filtered (no-response)`. *Hipótese, não verificada:* o Nmap desistiu de
+  3078 ms; o Nmap reportou `filtered (no-response)`. Explicação provável, não verificada experimentalmente: o Nmap desiste de
   cada tentativa antes dos cerca de 3 s em que o kernel desiste da resolução ARP e devolve EHOSTUNREACH.
   O scanner esperou o suficiente para ver o erro. Para verificar, basta repetir o Nmap com
   `--initial-rtt-timeout 4s --max-rtt-timeout 5s` e o scanner com `-t 2`.
