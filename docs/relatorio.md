@@ -2,7 +2,7 @@
 
 Ambiente dos experimentos (`evidencias/*/contexto*.txt`): VM Kali (Linux 7.2.15 arm64), Python 3.14.8, Nmap 7.991.
 Scanner e Nmap executados na **mesma origem** (host Kali) contra o alvo Docker `172.30.0.10`, em
-24/11/2026, entre 15:27 e 15:29 (UTC−3). Todas as tabelas abaixo foram geradas a partir das saídas brutas em `evidencias/`.
+24/11/2026, entre 15:27 e 16:50 (UTC−3). Todas as tabelas abaixo foram geradas a partir das saídas brutas em `evidencias/`.
 
 ## 1. Estratégia de implementação
 
@@ -56,23 +56,28 @@ testar(ip, porta):                                # repete só em TIMEOUT, até 
         outro OSError                                  -> ERRO (+ errno)
 ```
 
-## 2. Testes iniciais e tratamento de erros (seções 3.3 e 4) — `evidencias/20261124-152701_erros/`
+## 2. Testes iniciais e tratamento de erros (seções 3.3 e 4) — `evidencias/20261124-164917_erros/`
 
-A visão geral do alvo bateu com a configuração do lab (`lab_completo.json`).
-As portas abertas que o scanner encontrou (80, 8080 e 9000) são exatamente as que o `ss -ltnp` lista
-no alvo como acessíveis. As portas 9001 e 9004 também têm processo escutando, mas o firewall as encobre.
+A varredura das portas configuradas (`lab_completo.json`) reproduziu a configuração do lab:
+3 abertas, 3 recusadas, 1 timeout e 1 erro. As portas abertas encontradas (80, 8080 e 9000) coincidem
+com as que o `ss -ltnp` do alvo lista em escuta e acessíveis (`contexto.txt`). As portas 9001 e 9004
+também têm processo em escuta, mas o firewall as encobre.
 
 | # | Situação | Comando | Resultado observado | Saída |
 |---|---|---|---|---|
-| 1 | Serviço ativo | `-p 80` | `aberta`, 0,11 ms | 0 |
-| 2 | Sem serviço | `-p 22` | `recusada` (ECONNREFUSED), 0,10 ms | 0 |
-| 3 | Porta inválida | `-p 0`, `-p 70000`, `-p abc` | mensagem de uso, nenhum pacote enviado | 2 |
-| 4 | Intervalo inválido | `-p 100-20`, `1-70000`, `10-`, `22,,80` | mensagem específica para cada caso | 2 |
+| 1 | Serviço ativo | `-p 80` | `aberta`, 0,10 ms | 0 |
+| 2 | Sem serviço | `-p 22` | `recusada` (ECONNREFUSED), 0,08 ms | 0 |
+| 3 | Porta inválida | `-p 0`, `-p 70000`, `-p abc` | mensagem de uso específica; nenhum pacote enviado | 2 |
+| 4 | Intervalo inválido | `-p 100-20`, `1-70000`, `10-`, `22,,80` | mensagem de uso específica para cada caso | 2 |
 | 5 | Destino inválido | `naoexiste.invalid`, `300.1.1.1` | "não foi possível resolver… Name or service not known" | 1 |
 | 6 | Timeout | `-p 9001 -t 2` / `-t 1 -r 2` | `timeout` em 2002 ms / 3 tentativas, 3,006 s no total | 0 |
-| 7 | Ctrl+C (SIGINT após 3 s) | `-p 10000-10099 -w 1 -t 1` | resultado parcial (2/100 portas), JSON gravado, sem traceback | — |
-| + | ICMP host-unreachable | `-p 9003` | `erro` EHOSTUNREACH, 0,05 ms | 0 |
-| + | IP sem host na sub-rede | `172.30.0.99 -t 5` | `erro` EHOSTUNREACH depois de 3075 ms (ARP sem resposta) | 0 |
+| 7 | Ctrl+C (SIGINT após 3 s) | `-p 10000-10099 -w 1 -t 1` | resultado parcial (2/100 portas em 2,937 s), JSON gravado, sem traceback | 130 |
+| + | ICMP host-unreachable | `-p 9003` | `erro` EHOSTUNREACH, 0,02 ms | 0 |
+| + | IP sem host na sub-rede | `172.30.0.99 -t 5` | `erro` EHOSTUNREACH depois de 3073 ms (ARP sem resposta) | 0 |
+| + | Timeout / workers inválidos | `-t 0`, `-w 0` | mensagem de uso | 2 |
+
+Em nenhum caso o programa encerrou com traceback, e os parâmetros são rejeitados antes de qualquer
+tentativa de conexão.
 
 ## 3. Comparação com o Nmap (seção 5) — `evidencias/20261124-152717_nmap/`
 
