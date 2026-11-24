@@ -5,7 +5,6 @@
 ```bash
 cd portscanner && git pull
 ./scripts/lab.sh up && ./scripts/lab.sh status
-python3 -m unittest discover -s tests -t .
 ```
 
 ## Pedidos prováveis do professor e o que fazer

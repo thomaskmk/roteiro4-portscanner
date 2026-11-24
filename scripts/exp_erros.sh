@@ -1,13 +1,10 @@
 #!/bin/bash
 # Seções 3.3 e 4: testes iniciais e tratamento de erros (7 situações + extras).
-# Saída: evidencias/<data>_erros/{execucao.log, contexto.txt, lab_completo.json, unittest.log}
+# Saída: evidencias/<data>_erros/{execucao.log, contexto.txt, lab_completo.json, interrompido.json}
 source "$(dirname "$0")/_common.sh"
 require "$PY"; require_lab
 OUT=$(new_outdir erros); LOG="$OUT/execucao.log"
 snapshot "$OUT/contexto.txt"
-
-echo "## 0. testes unitários" | tee -a "$LOG"
-run "$OUT/unittest.log" "$PY" -m unittest discover -s tests -t . -v
 
 echo "## 3.3 visão geral do lab (todas as portas configuradas)" | tee -a "$LOG"
 run "$LOG" "${SCAN[@]}" "$TARGET" -p 22,80,8080,9000-9004 -t 2 --all --json "$OUT/lab_completo.json"

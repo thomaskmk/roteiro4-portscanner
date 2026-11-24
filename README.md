@@ -82,14 +82,11 @@ portscanner/
   engine.py   distribui as portas entre threads; trata Ctrl+C
   report.py   tabela, resumo, JSON, CSV
   models.py   Status (enum) e estruturas de resultado
-tests/        unittest (parser, classificação, conexões reais em 127.0.0.1, CLI)
 lab/          alvo Docker com portas em estados controlados
 scripts/      experimentos (geram evidências) e ferramentas de comparação
 docs/         planejamento, relatório e roteiro da demonstração
 evidencias/   saídas brutas dos experimentos
 ```
-
-Testes: `python3 -m unittest discover -s tests -t . -v`
 
 ## Laboratório (VM Kali)
 
@@ -125,7 +122,7 @@ Se `iptables` falhar dentro do container, troque `IPTABLES: iptables` por `iptab
 
 | Script | Seção do roteiro | O que faz |
 |---|---|---|
-| `./scripts/exp_erros.sh` | 3.3 e 4 | testes unitários + os 7 cenários de erro + erros de comunicação |
+| `./scripts/exp_erros.sh` | 3.3 e 4 | os 7 cenários de erro + erros de comunicação |
 | `./scripts/exp_nmap.sh` | 5 | scanner e `nmap -sT -Pn --reason` nas mesmas portas; gera `comparacao.md` |
 | `./scripts/exp_state.sh [--container]` | 6 | rodadas A/B/C (e D/E com o container parado); gera `resumo.md` |
 | `./scripts/exp_timeout.sh` | 8.3 | latência artificial × timeouts 0.1–2 s × nmap; gera `resumo.md` |

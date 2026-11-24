@@ -33,7 +33,7 @@ com medição de tempo, log (`--log`), nome provável do serviço e novas tentat
 
 ## 2. Testes iniciais e tratamento de erros (seções 3.3 e 4) — `evidencias/20261124-152701_erros/`
 
-Os 28 testes unitários passaram. A visão geral do alvo bateu com a configuração do lab (`lab_completo.json`).
+A visão geral do alvo bateu com a configuração do lab (`lab_completo.json`).
 As portas abertas que o scanner encontrou (80, 8080 e 9000) são exatamente as que o `ss -ltnp` lista
 no alvo como acessíveis. As portas 9001 e 9004 também têm processo escutando, mas o firewall as encobre.
 
@@ -50,8 +50,9 @@ no alvo como acessíveis. As portas 9001 e 9004 também têm processo escutando,
 | + | IP sem host na sub-rede | `172.30.0.99 -t 5` | `erro` EHOSTUNREACH depois de 3075 ms (ARP sem resposta) | 0 |
 
 **Nota sobre o caso 7.** O código de saída registrado foi 124, que é o código do próprio `timeout`
-do coreutils, e não o do scanner. O script foi corrigido para usar `--preserve-status`. O código
-130 do scanner está coberto pelo teste unitário `test_keyboard_interrupt_returns_partial`.
+do coreutils, e não o do scanner. O script foi corrigido para usar `--preserve-status`, e é preciso
+reexecutá-lo para registrar o código 130 do scanner. O arquivo `unittest.log` nessa pasta é de
+uma versão anterior do repositório, que tinha testes automatizados, removidos depois.
 
 ## 3. Comparação com o Nmap (seção 5) — `evidencias/20261124-152717_nmap/`
 
